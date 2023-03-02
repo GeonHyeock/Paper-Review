@@ -10,13 +10,7 @@
 
 <img src="../Mean teachers are better role models/Images/Π-MODEL.jpeg">
 
-$
-x_i : input 
-\newline
-y_i : label
-\newline
-(z_i, \tilde{z_i}) : output1,\ output2 
-$ 
+$ x_i : input \newline y_i : label \newline (z_i, \tilde{z_i}) : output1,\ output2 $ 
 
 Π-MODEL은 input $x_i$에 대하여 확률적인 augmentation과 dropout이 포함된 네트워크를 통과하여 서로다른 output $z_i$와 $\tilde{z_i}$를 반환한다. 이를 이용하여 2가지의 loss를 구하게 된다.
 - supervised loss : Cross Entropy($y_i$, $z_i$)
@@ -32,13 +26,7 @@ $
 ## Temporal ensembling
 <img src="../Mean teachers are better role models/Images/Temporal Ensembling.jpeg">
 
-$
-x_i : input 
-\newline 
-y_i : label 
-\newline
-(z_i,\tilde{z_i}) : output,\ ensemble \ output
-$
+$ x_i : input \newline y_i : label \newline (z_i,\tilde{z_i}) : output,\ ensemble \ output $
 
 Temporal ensembling은 Π-MODEL과 다른점은 다음과 같다.
 - input에 대하여 하나의 output을 추론한다.
