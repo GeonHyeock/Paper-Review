@@ -11,14 +11,16 @@
 <img src="../Mean teachers are better role models/Images/Π-MODEL.jpeg">
 
 $
-x_i : input \\
-y_i : label \\
-(z_i,\tilde{z_i}) : output1,\ output2 
+x_i : input 
+\newline
+y_i : label
+\newline
+(z_i, \tilde{z_i}) : output1,\ output2 
 $ 
 
 Π-MODEL은 input $x_i$에 대하여 확률적인 augmentation과 dropout이 포함된 네트워크를 통과하여 서로다른 output $z_i$와 $\tilde{z_i}$를 반환한다. 이를 이용하여 2가지의 loss를 구하게 된다.
 - supervised loss : Cross Entropy($y_i$, $z_i$)
-- unsupervised loss : MSE($z_i$,$\tilde{z_i}$)
+- unsupervised loss : MSE($z_i$, $\tilde{z_i}$)
 
 
 이때 Loss의 scale을 위하여 t번째 학습 epoch에 대하여 종속적으로 증가하는 $w(t)$를 사용한다. \
@@ -31,9 +33,11 @@ $
 <img src="../Mean teachers are better role models/Images/Temporal Ensembling.jpeg">
 
 $
-x_i : input \\
-y_i : label \\
-(z_i,\tilde{z_i}) : output,\ ensemble \ output \\
+x_i : input 
+\newline 
+y_i : label 
+\newline
+(z_i,\tilde{z_i}) : output,\ ensemble \ output
 $
 
 Temporal ensembling은 Π-MODEL과 다른점은 다음과 같다.
@@ -83,6 +87,9 @@ $Loss = Classification\ Loss + Consistency\ Loss $
 student model의 weight $\theta_t$에 대하여 teacher model의 weight $\theta_t'$을 다음과 같이 update한다. 
 
 $\theta_t = \alpha \theta_t' + (1-\alpha)\theta_t$
+
+---
+
 
 <img src="../Mean teachers are better role models/Images/Table3.jpeg">
 
