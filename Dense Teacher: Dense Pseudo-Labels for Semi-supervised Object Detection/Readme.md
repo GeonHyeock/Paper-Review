@@ -1,7 +1,6 @@
 # Dense Teacher: Dense Pseudo-Labels for Semi-supervised Object Detection
 
 ## Abstract
-
 pseudo-boxes에 비하여 Dense Pseudo-Label은 후처리를 필요로 하지 않으므로 더 많은 정보를 포함하고 있다.
 
 <img src="../Dense Teacher: Dense Pseudo-Labels for Semi-supervised Object Detection/images/Fig1.jpeg">
@@ -13,8 +12,6 @@ pseudo-boxes에 비하여 Dense Pseudo-Label은 후처리를 필요로 하지 �
 ---
 
 ## DPL : Dense Pseudo Label
-
-<img src="../Dense Teacher: Dense Pseudo-Labels for Semi-supervised Object Detection/images/Fig4.jpeg">
 
 DPL은 integral label이다. 일반적으로 사람이 읽을 수 있는 형태의 label이 아닌 후처리 없이 network로 부터 나오는 label이다.
 
@@ -74,7 +71,13 @@ threshold로 예측치를 제거하는 연산이 없어 낮은 점수의 예측�
 
 $S_i = \max\limits_{c \in [1,C]}(p_{i,t}^t)$
 
-$y_i= \begin{cases} p_i^t, if S_i\ in\ top\ k\% \\ 0, otherwise \end{cases}$
+```math
+y_i=
+\begin{cases}
+p_i^t, if S_i\ in\ top\ k\% \\
+0, otherwise
+\end{cases}
+```
 
 이때 $p_{i,c}^t$는 teacher model로부터 나온 c번째 class의 i번째 샘플의 score 예측치를 이고 $C$는 클래스의 갯수이다.
 
@@ -90,8 +93,6 @@ COCO-Standard 10%에 대한결과이다. *표시가 되어있는 것은 FCOS에�
 
 
 ---
-
-## 결과
 
 <img src="../Dense Teacher: Dense Pseudo-Labels for Semi-supervised Object Detection/images/Table2.jpeg">
 Dense Teacher와 다른 방법론들에 대하여 COCO-Standard데이터와 비교한 표이다.
