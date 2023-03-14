@@ -13,6 +13,8 @@ pseudo-boxes에 비하여 Dense Pseudo-Label은 후처리를 필요로 하지 �
 
 ## DPL : Dense Pseudo Label
 
+<img src="../Dense Teacher: Dense Pseudo-Labels for Semi-supervised Object Detection/images/Fig4.jpeg">
+
 DPL은 integral label이다. 일반적으로 사람이 읽을 수 있는 형태의 label이 아닌 후처리 없이 network로 부터 나오는 label이다.
 
 student 모델의 EMA를 통하여 생성된 teacher model로부터 unlabeled data에 대하여 DPL을 생성한다. 이후 student model을 labeled data와 unlabeled data로 부터 학습한다.
