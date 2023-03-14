@@ -74,11 +74,7 @@ threshold로 예측치를 제거하는 연산이 없어 낮은 점수의 예측�
 
 $S_i = \max\limits_{c \in [1,C]}(p_{i,t}^t)$
 
-$y_i=
-\begin{cases}
-p_i^t, if S_i\ in\ top\ k\% \\
-0, otherwise
-\end{cases}$
+$y_i= \begin{cases} p_i^t, if S_i\ in\ top\ k\% \\ 0, otherwise \end{cases}$
 
 이때 $p_{i,c}^t$는 teacher model로부터 나온 c번째 class의 i번째 샘플의 score 예측치를 이고 $C$는 클래스의 갯수이다.
 
