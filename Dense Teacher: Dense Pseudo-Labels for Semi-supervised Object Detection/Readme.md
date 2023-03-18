@@ -71,7 +71,7 @@ DPL은 post-sigmoid logit으로 부터 나온 예측치를 사용한다. 따라�
 
 threshold로 예측치를 제거하는 연산이 없어 낮은 점수의 예측값도 보존이 된다. 낮은 점수의 예측값은 대부분 배경을 포함하므로 좋은 정보라 할 수 없다. 따라서 [FRS](https://arxiv.org/abs/2111.00674)기반으로 학습영역과 억제영역으로 나눈다.
 
-$$S_i = \max\limits_{c \in [1,C]}(p_{i,t}^t)$$
+$$S_i = \max\limits_{c \in [1,C]}(p_{i,c}^t)$$
 
 ```math
 y_i=
