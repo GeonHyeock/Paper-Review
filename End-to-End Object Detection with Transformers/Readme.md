@@ -14,13 +14,9 @@
 DETR은 고정된 N개의 output을 반환한다.\
 $y_i$ : groud truth, $\hat{y_i}$ : prediction, $K_n$ : N개의 index 순열 함수, $c_i$ : class label, $b_i$ : box정보
 
-$
-L_{Match}(y_i,\hat{y}_{{\sigma(i)}}) = -1_{c_i \neq \emptyset}\hat{p}_{{\sigma(i)}}(c_i) + 1_{c_i \neq \emptyset}L_{box}(b_i,\hat{b_i})
-$
+$L_{Match}(y_i,\hat{y}_{{\sigma(i)}}) = -1_{c_i \neq \emptyset}\hat{p}_{{\sigma(i)}}(c_i) + 1_{c_i \neq \emptyset}L_{box}(b_i,\hat{b_i})$
 
-$
-\hat{\sigma} = \argmax\limits_{\sigma \in K_N} \sum\limits_{i}^NL_{Match}(y_i,\hat{y}_{{\sigma(i)}})
-$
+$\hat{\sigma} = \argmax\limits_{\sigma \in K_N} \sum\limits_{i}^NL_{Match}(y_i,\hat{y}_{{\sigma(i)}})$
 
 이때 $\sigma$는 prediction과 ground truth를 매칭하는 index function이다.
 
