@@ -14,13 +14,19 @@
 DETR은 고정된 N개의 output을 반환한다.\
 $y_i$ : groud truth, $\hat{y_i}$ : prediction, $K_n$ : N개의 index 순열 함수, $c_i$ : class label, $b_i$ : box정보
 
-$L_{Match}(y_i,\hat{y}_{{\sigma(i)}}) = -1_{c_i \neq \emptyset}\hat{p}_{{\sigma(i)}}(c_i) + 1_{c_i \neq \emptyset}L_{box}(b_i,\hat{b_i})$
+```math
+L_{Match}(y_i,\hat{y}_{{\sigma(i)}}) = -1_{c_i \neq \emptyset}\hat{p}_{{\sigma(i)}}(c_i) + 1_{c_i \neq \emptyset}L_{box}(b_i,\hat{b_i})
+```
 
-$ \hat{\sigma} = \argmax\limits_{\sigma \in K_N} \sum\limits_{i}^NL_{Match}(y_i,\hat{y}_{{\sigma(i)}})$ 
+```math
+\hat{\sigma} = \argmax\limits_{\sigma \in K_N} \sum\limits_{i}^NL_{Match}(y_i,\hat{y}_{{\sigma(i)}})
+```
 
 이때 $\sigma$는 prediction과 ground truth를 매칭하는 index function이다.
 
-$L_{Hungarian}(y,\hat{y}) = \sum\limits_{i=1}^N -log \ \hat{p}_{{\hat{\sigma}(i)}}(c_i) + 1_{c_i \neq \emptyset}L_{box}(b_i,\hat{b_i})$
+```math
+L_{Hungarian}(y,\hat{y}) = \sum\limits_{i=1}^N -log \ \hat{p}_{{\hat{\sigma}(i)}}(c_i) + 1_{c_i \neq \emptyset}L_{box}(b_i,\hat{b_i})
+```
 
 $\hat{\sigma}$은 예측 결과와 ground truth를 최적의 이분매칭을 해주는 index 함수이다. 이 값을 통하여 class의 확률값과 bbox의 regression 값을 최종 loss로 
 사용하였다.
@@ -35,7 +41,7 @@ DETR의 구조는 크게 다음 3가지로 구분된다.
 
 #### CNN backbone
 Resnet, efficient net등 다양한 구조의 모델을 자유롭게 사용할 수 있다.
-본 논문에서는 input image의 $w$,$h$ -> $\frac{w}{32},\frac{h}{32}$로 줄이면서 C값은 2048로 늘렸다.
+본 논문에서는 input image의 $w$, $h$ -> $\frac{w}{32},\frac{h}{32}$로 줄이면서 C값은 2048로 늘렸다.
 
 #### Transformer encoder & decoder
 
